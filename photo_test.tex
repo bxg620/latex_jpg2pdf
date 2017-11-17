@@ -1,0 +1,25 @@
+\documentclass[tikz]{standalone}
+\usepackage{graphicx}
+\usepackage{pgffor}
+%\usepackage{siunitx}
+
+%\makeatletter
+%\let\twodigits\two@digits
+%\makeatother
+
+\standaloneenv{my}
+
+\newcommand\threeint[1]{%
+    \ifnum#1<10 00\else \ifnum#1<100 0\fi\fi\number#1
+}
+
+\begin{document}
+
+%\sisetup{minimum-integer-digits=3}
+\foreach \t in {1,...,101}{
+\begin{my}
+\includegraphics{\threeint{\t}.jpg}
+\end{my}
+}
+
+\end{document}
